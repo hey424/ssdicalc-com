@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Calculator Methodology | ssdicalc.com';
+const description = 'How the SSDI benefit calculator estimates your monthly benefit using SSA PIA bend points.';
+---
+<BaseLayout title={title} description={description}>
+  <h1>Calculator Methodology</h1>
+
+  <h2>Primary Insurance Amount (PIA) Formula</h2>
+  <p>We use SSA's official 2025 PIA bend point formula to estimate monthly benefits:</p>
+  <ul>
+    <li>90% of the first $1,174 of AIME</li>
+    <li>32% of AIME between $1,174 and $7,078</li>
+    <li>15% of AIME above $7,078</li>
+  </ul>
+  <p>The result is rounded to the nearest $0.10, consistent with SSA's rounding rules.</p>
+
+  <h2>AIME Input</h2>
+  <p>AIME (Average Indexed Monthly Earnings) is the key input. SSA computes this from your official earnings record using wage indexing. Our calculator accepts your self-estimated AIME — we recommend checking your Social Security Statement at ssa.gov/myaccount for accuracy.</p>
+
+  <h2>Work Credits Check</h2>
+  <p>If you indicate insufficient credits, we flag likely ineligibility. SSA makes the final determination — we recommend filing regardless if you believe you have a qualifying disability.</p>
+
+  <h2>Bend Points Update</h2>
+  <p>SSA adjusts bend points annually. Our formula uses 2025 bend points. Check <a href="https://www.ssa.gov/oact/cola/piaformula.html" target="_blank" rel="noopener">ssa.gov</a> for the most current figures.</p>
+
+  <h2>Limitations</h2>
+  <p>This calculator does not account for: family maximum benefits, offsets for workers' compensation or other disability benefits, delayed retirement credits, or adjustments for age-based reductions. SSA's official calculation may differ from this estimate.</p>
+</BaseLayout>
