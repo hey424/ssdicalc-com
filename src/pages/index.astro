@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'SSDI Benefit Calculator | ssdicalc.com';
+const description = 'Estimate your Social Security Disability Insurance (SSDI) monthly benefit based on your earnings history and work credits.';
+---
+<BaseLayout title={title} description={description}>
+  <h1>SSDI Benefit Calculator</h1>
+  <p>Estimate your potential SSDI monthly benefit based on your average indexed monthly earnings (AIME) and work history. This is an educational estimate — SSA calculates your exact benefit using your official earnings record.</p>
+  <form id="calc">
+    <label for="aime">Average Indexed Monthly Earnings (AIME) ($)</label>
+    <input type="number" id="aime" min="0" value="3000" required />
+    <p style="font-size:.875rem;color:#555;margin-top:-.5rem">Your AIME is your average monthly earnings over your working years, adjusted for inflation. SSA calculates this from your earnings record. If unknown, estimate by dividing your total career earnings by the number of months worked.</p>
+
+    <label for="age">Age at Disability Onset</label>
+    <input type="number" id="age" min="18" max="66" value="45" required />
+
+    <label for="work_credits">Work Credits Earned</label>
+    <select id="work_credits">
+      <option value="sufficient" selected>Sufficient (40+ credits, 20 in last 10 years)</option>
+      <option value="young_worker">Young worker exception (under age 31)</option>
+      <option value="insufficient">Insufficient — likely ineligible</option>
+    </select>
+
+    <button type="submit">Calculate SSDI Estimate</button>
+  </form>
+  <div id="result"></div>
+
+  <h2>How SSDI Benefits Are Calculated</h2>
+  <p>SSA uses a <strong>Primary Insurance Amount (PIA)</strong> formula that applies bend points to your AIME. For 2025:</p>
+  <ul>
+    <li>90% of first $1,174 of AIME</li>
+    <li>32% of AIME between $1,174 and $7,078</li>
+    <li>15% of AIME above $7,078</li>
+  </ul>
+  <p>The result is your monthly SSDI benefit. The 2025 average SSDI benefit is approximately $1,537/month; the maximum is $3,822/month.</p>
+
+  <script>
+    document.getElementById('calc').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const aime = parseFloat(document.getElementById('aime').value) || 0;
+      const credits = document.getElementById('work_credits').value;
+
+      if (credits === 'insufficient') {
+        document.getElementById('result').innerHTML =
+          '<strong>Likely Ineligible</strong><br>You may not have enough work credits to qualify for SSDI. Consider filing anyway — SSA makes the final determination. You may qualify for SSI (Supplemental Security Income) instead.';
+        return;
+      }
+
+      // 2025 bend points
+      const bp1 = 1174, bp2 = 7078;
+      let pia = 0;
+      if (aime <= bp1) {
+        pia = aime * 0.90;
+      } else if (aime <= bp2) {
+        pia = bp1 * 0.90 + (aime - bp1) * 0.32;
+      } else {
+        pia = bp1 * 0.90 + (bp2 - bp1) * 0.32 + (aime - bp2) * 0.15;
+      }
+      pia = Math.round(pia * 10) / 10;
+
+      const annual = Math.round(pia * 12);
+      const fmt = n => '$' + n.toLocaleString();
+      document.getElementById('result').innerHTML =
+        '<strong>Estimated SSDI Monthly Benefit: ' + fmt(Math.round(pia)) + '/month</strong>' +
+        '<br>Estimated annual benefit: ' + fmt(annual) +
+        '<br>Your AIME: ' + fmt(Math.round(aime)) +
+        '<br>Based on 2025 SSA PIA bend points ($1,174 / $7,078)' +
+        '<br><em>This is an estimate. SSA calculates your exact benefit from your official earnings record. Apply at ssa.gov.</em>';
+    });
+  </script>
+</BaseLayout>
