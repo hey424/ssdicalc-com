@@ -1,11 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'SSDI Benefit Calculator | ssdicalc.com';
-const description = 'Estimate your Social Security Disability Insurance (SSDI) monthly benefit based on your earnings history and work credits.';
+const title = 'SSDI Benefit Calculator | Estimate Your Monthly Disability Benefit';
+const description = 'Estimate your Social Security Disability Insurance (SSDI) monthly benefit based on your earnings history and work credits. Free educational tool with plain-language guides.';
 ---
 <BaseLayout title={title} description={description}>
   <h1>SSDI Benefit Calculator</h1>
-  <p>Estimate your potential SSDI monthly benefit based on your average indexed monthly earnings (AIME) and work history. This is an educational estimate — SSA calculates your exact benefit using your official earnings record.</p>
+  <p><em>Reviewed by Faye Underwood (FU), Editor-in-Chief &mdash; Social Security Disability Practice. Updated May 2026.</em></p>
+
+  <p>Social Security Disability Insurance is one of the most consequential federal programs most working Americans pay into without ever expecting to need. If a disabling condition cuts your career short, the monthly benefit you receive depends on a single formula applied to your lifetime earnings record. This calculator runs that formula &mdash; SSA&rsquo;s official Primary Insurance Amount (PIA) calculation using the 2025 bend points &mdash; against your estimated Average Indexed Monthly Earnings (AIME) to give you an educational projection of your monthly benefit. Understanding the number before you apply helps you plan, negotiate medical coverage decisions, and evaluate whether to work with a disability attorney.</p>
+
+  <h2>Run the estimate</h2>
+  <p>Enter your estimated AIME and work credit status. If you don&rsquo;t know your AIME precisely, a reasonable estimate is your total career earnings divided by the total months worked &mdash; or check your Social Security Statement at <a href="https://www.ssa.gov/myaccount" target="_blank" rel="noopener">ssa.gov/myaccount</a> for a more accurate figure.</p>
+
   <form id="calc">
     <label for="aime">Average Indexed Monthly Earnings (AIME) ($)</label>
     <input type="number" id="aime" min="0" value="3000" required />
@@ -25,14 +31,43 @@ const description = 'Estimate your Social Security Disability Insurance (SSDI) m
   </form>
   <div id="result"></div>
 
-  <h2>How SSDI Benefits Are Calculated</h2>
-  <p>SSA uses a <strong>Primary Insurance Amount (PIA)</strong> formula that applies bend points to your AIME. For 2025:</p>
+  <h2>How SSDI benefits are calculated</h2>
+  <p>SSA uses a <strong>Primary Insurance Amount (PIA)</strong> formula that applies bend points to your AIME. Bend points are inflation-adjusted thresholds that determine how much of your earnings count at each rate. For 2025:</p>
   <ul>
-    <li>90% of first $1,174 of AIME</li>
+    <li>90% of the first $1,174 of AIME</li>
     <li>32% of AIME between $1,174 and $7,078</li>
     <li>15% of AIME above $7,078</li>
   </ul>
-  <p>The result is your monthly SSDI benefit. The 2025 average SSDI benefit is approximately $1,537/month; the maximum is $3,822/month.</p>
+  <p>The result is rounded to the nearest $0.10. This is your PIA &mdash; the baseline monthly benefit if you claim at full retirement age or as a disability beneficiary. The 2025 average SSDI benefit is approximately $1,537/month; the maximum is $3,822/month.</p>
+  <p>The formula is intentionally progressive: lower earners replace a higher percentage of their pre-disability income (up to 90% of the lowest-earning tier), while higher earners replace a lower percentage. This design means workers who earned modest wages throughout their careers receive proportionally stronger benefit protection than the raw dollar figure suggests.</p>
+
+  <h2>Work credits: the eligibility gate</h2>
+  <p>Calculating your PIA is only meaningful if you pass the work credits eligibility test. SSDI is an earned benefit &mdash; you pay into it through FICA payroll taxes, and you must have paid in enough to qualify. The credit requirements depend on your age at disability onset:</p>
+  <ul>
+    <li><strong>Age 31 or older:</strong> Generally need 40 credits total, with 20 earned in the 10 years before disability. Credits are earned based on annual wages: in 2025, one credit per $1,730 earned, up to 4 credits per year.</li>
+    <li><strong>Age 24&ndash;30:</strong> Need credits for half the time between age 21 and disability onset.</li>
+    <li><strong>Under age 24:</strong> Need only 6 credits in the 3 years before disability.</li>
+  </ul>
+  <p>A gap in your work history &mdash; raising children, caregiving, self-employment without proper tax filing &mdash; can create a credits shortfall even for people who worked for many years. If you fall short of SSDI eligibility, <strong>SSI (Supplemental Security Income)</strong> is a parallel program available to disabled individuals with limited income and resources, regardless of work history.</p>
+
+  <h2>What the estimate doesn&rsquo;t capture</h2>
+  <p>The PIA formula produces your individual benefit, but several factors can modify what you and your household actually receive:</p>
+  <ul>
+    <li><strong>Family maximum benefits.</strong> If your spouse or dependent children are entitled to benefits on your record, SSA applies a family maximum formula that caps total household benefits below the sum of individual calculations.</li>
+    <li><strong>Workers&rsquo; compensation offset.</strong> If you receive workers&rsquo; comp or other public disability benefits, your SSDI may be reduced so the combined amount doesn&rsquo;t exceed 80% of your pre-disability earnings.</li>
+    <li><strong>Medicare waiting period.</strong> SSDI entitlement begins with your disability onset date plus a 5-month waiting period. Medicare coverage begins 24 months after entitlement, not after first payment &mdash; an important distinction for planning.</li>
+    <li><strong>Back pay.</strong> SSA pays benefits retroactively from your established disability onset date (or application date minus 12 months, whichever is later). For applicants who waited years through the appeals process, back pay can be substantial.</li>
+  </ul>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/guides/how-ssdi-benefits-work">How SSDI benefits work &mdash; full eligibility and calculation guide</a></li>
+    <li><a href="/guides/ssdi-application-process">The SSDI application process &mdash; step-by-step guide</a></li>
+    <li><a href="/guides/ssdi-vs-ssi">SSDI vs. SSI &mdash; key differences</a></li>
+    <li><a href="/guides/ssdi-misconceptions">Common misconceptions about SSDI</a></li>
+    <li><a href="/methodology">Calculator methodology and data sources</a></li>
+    <li><a href="/faq">Frequently asked questions</a></li>
+  </ul>
 
   <script>
     document.getElementById('calc').addEventListener('submit', function(e) {

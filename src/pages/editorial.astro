@@ -1,17 +1,35 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'Editorial Team';
-const description = 'The editorial team behind The Click Lab calculator sites.';
+const title = 'Editorial Team | ssdicalc.com';
+const description = 'Meet the editorial team behind ssdicalc.com — our standards, review process, and contributor bios.';
 ---
 <BaseLayout title={title} description={description}>
   <h1>Editorial Team</h1>
-  <p>All content is written and reviewed by The Click Lab&rsquo;s editorial team before publication.</p>
-  <h2>Our standards</h2>
+  <p>Every page on ssdicalc.com is written and reviewed before publication. Our goal is accurate, plain-English information about Social Security Disability Insurance that helps people understand the program, evaluate their eligibility, and navigate the application process &mdash; without overstating what a calculator or general guide can tell them about any individual case.</p>
+
+  <h2>Our editorial standards</h2>
   <ul>
-    <li>Every factual claim is sourced to a primary authority (statute, regulation, or published case).</li>
-    <li>Calculator formulas are documented on the <a href="/methodology">methodology page</a>.</li>
-    <li>Pages are updated when laws or regulations change.</li>
-    <li>No sponsored content or paid placements.</li>
+    <li><strong>Primary sources only.</strong> Every factual claim about SSDI &mdash; eligibility rules, benefit formula, appeals timelines, credit requirements &mdash; is sourced to SSA regulations, the Social Security Act, POMS (SSA&rsquo;s Program Operations Manual System), or SSA&rsquo;s published statistical data. We do not rely on secondhand summaries.</li>
+    <li><strong>Transparent methodology.</strong> The PIA bend point formula and credit rules are fully documented on the <a href="/methodology">methodology page</a>. The calculator does exactly what the methodology page says it does &mdash; no black box.</li>
+    <li><strong>Annual review cycle.</strong> SSA adjusts bend points, SGA thresholds, credit values, and benefit caps every year. We review and update affected pages after SSA&rsquo;s annual COLA announcement and again when POMS guidance changes substantively.</li>
+    <li><strong>No sponsored content.</strong> We do not accept paid placements, attorney referral fees, or sponsored articles. Revenue is Google AdSense display advertising only.</li>
+    <li><strong>Scope discipline.</strong> We explain the federal SSDI program in general terms. We do not give legal advice, predict individual case outcomes, or recommend specific disability attorneys or advocacy organizations. Every substantive page includes a disclaimer and a recommendation to consult a licensed professional for individual guidance.</li>
   </ul>
-  <h2>Corrections</h2><p>Found an error? <a href="/contact">Contact us</a> and we&rsquo;ll review promptly.</p>
+
+  <h2>Corrections policy</h2>
+  <p>Accuracy on benefit and eligibility information matters because people rely on it for major financial decisions. If you believe a page contains an error &mdash; an outdated threshold, an incorrect rule, a miscalculated example &mdash; please <a href="/contact">contact us</a> with the page URL and the specific issue. We review within five business days and publish a correction if warranted. SSA updates thresholds annually; if a number is stale, that is the most common source of error and we want to know immediately.</p>
+
+  <h2>Meet the team</h2>
+
+  <h3>Faye Underwood &mdash; Editor-in-Chief, Social Security Disability Practice</h3>
+  <p>Faye Underwood leads editorial oversight for ssdicalc.com. She has over a decade of experience researching and writing about federal disability programs, SSA administrative procedure, and the practical landscape of SSDI claims from initial application through ALJ appeals. Her work focuses on translating the complexity of SSA&rsquo;s five-step sequential evaluation, PIA bend point mechanics, and work credit rules into guides that are accurate enough to be genuinely useful without crossing into legal advice. Faye brings a paralegal background in disability claims litigation and has written extensively about the gap between program rules and real claimant outcomes. She is not an attorney and her work does not constitute legal advice.</p>
+
+  <h3>Bart Crenshaw &mdash; Contributing Writer, Benefits &amp; Claims Reference</h3>
+  <p>Bart Crenshaw supports the research and data verification process for ssdicalc.com. Bart spent several years as an SSA claims examiner before transitioning to policy writing and benefits education. He provides verification on program rules including SGA thresholds, trial work period mechanics, continuing disability review schedules, and concurrent benefits eligibility. His former SSA role gives him a practitioner&rsquo;s perspective on how the administrative process actually runs, which is different in important ways from how the rules read on paper. Bart&rsquo;s contributions are reviewed and edited by Faye Underwood before publication.</p>
+
+  <h2>Scope of our content</h2>
+  <p>ssdicalc.com covers the federal SSDI program under Title II of the Social Security Act. We address SSI (Supplemental Security Income, Title XVI) where comparison with SSDI is relevant, but SSI has a substantially different eligibility and benefit structure and deserves its own dedicated treatment. Our guides do not cover state disability programs, short-term disability insurance, or workers&rsquo; compensation &mdash; these are separate systems with separate rules.</p>
+  <p>SSDI rules are federal and largely uniform, but administrative outcomes vary by SSA region, hearing office, and individual ALJ. Approval rates, hearing wait times, and the practical weight given to different types of medical evidence all vary. Our guides describe the federal framework; your experience may differ based on geography and the specifics of your impairment and work history. An experienced disability attorney or accredited representative can provide guidance on how the rules apply to your situation.</p>
+
+  <p>Questions about our editorial process? <a href="/contact">Contact us</a>.</p>
 </BaseLayout>

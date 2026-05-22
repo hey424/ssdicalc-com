@@ -1,18 +1,52 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const title = 'How SSDI Benefits Work | ssdicalc.com';
-const description = 'A complete guide to SSDI eligibility requirements, how benefits are calculated, and how to apply.';
+const description = 'A complete guide to SSDI eligibility requirements, the five-step evaluation, how benefits are calculated, Medicare, and continuing disability reviews.';
 ---
 <BaseLayout title={title} description={description}>
   <h1>How SSDI Benefits Work</h1>
-  <h2>Eligibility Requirements</h2>
-  <p>To receive SSDI you must: (1) be unable to do substantial gainful activity due to a medically determinable impairment; (2) have a condition expected to last at least 12 months or result in death; and (3) have earned sufficient work credits.</p>
+  <p><em>Reviewed by Faye Underwood (FU), Editor-in-Chief &mdash; Social Security Disability Practice. Updated May 2026.</em></p>
+
+  <p>Social Security Disability Insurance is a federal insurance program funded by FICA payroll taxes. Most working Americans contribute to it every paycheck without thinking about it, and most never need it. But when a disabling condition cuts a career short, understanding exactly how the program works determines whether you can access the benefits you paid for and how quickly.</p>
+
+  <h2>Who Is Eligible</h2>
+  <p>SSDI eligibility has two independent requirements that must both be satisfied:</p>
+  <p><strong>1. Insured status (work credits).</strong> SSDI is an earned benefit. You must have paid into Social Security through covered employment and accumulated enough work credits to be &ldquo;insured.&rdquo; Credits are earned based on annual wages &mdash; in 2025, one credit per $1,730 earned, up to four per year. Most workers age 31 or older need 40 total credits with at least 20 earned in the 10 years before disability onset. Younger workers face reduced credit requirements. A gap in your earnings record &mdash; years spent out of the workforce or doing cash work without proper tax reporting &mdash; can create a shortfall even for people who worked for decades.</p>
+  <p><strong>2. Medical eligibility (disability status).</strong> You must have a medically determinable physical or mental impairment expected to last at least 12 months or result in death that prevents you from engaging in substantial gainful activity (SGA). In 2025, SGA is defined as earning more than $1,620/month (or $2,700/month for blind individuals). SSA evaluates disability through a five-step sequential process described below.</p>
+
   <h2>The Five-Step Sequential Evaluation</h2>
-  <p>SSA evaluates SSDI claims using a five-step process: (1) Are you working above SGA level? (2) Is your impairment severe? (3) Does your impairment meet a Blue Book listing? (4) Can you perform your past work? (5) Can you do any work in the national economy?</p>
-  <h2>Benefit Amount</h2>
-  <p>Your monthly SSDI benefit is your Primary Insurance Amount (PIA), calculated from your AIME. The 2025 average is ~$1,537/month; the maximum is $3,822/month.</p>
-  <h2>Medicare</h2>
-  <p>After 24 months of SSDI entitlement (not payment — entitlement starts at your disability onset date plus 5-month waiting period), you become eligible for Medicare, regardless of age.</p>
+  <p>SSA applies a standardized five-step analysis to every SSDI application. The evaluation stops as soon as a definitive conclusion is reached at any step.</p>
+  <ol>
+    <li><strong>Are you working above SGA?</strong> If you are currently working and earning above the SGA threshold, SSA denies the claim at step 1. If not, the evaluation continues.</li>
+    <li><strong>Is your impairment severe?</strong> Your condition must impose more than a minimal limitation on your ability to do basic work activities. Almost any medically determinable impairment that is documented and persistent passes this threshold. Step 2 denials are relatively rare.</li>
+    <li><strong>Does your impairment meet or equal a Blue Book listing?</strong> SSA&rsquo;s Listing of Impairments defines specific clinical criteria for major condition categories. If your documented impairment meets the criteria for a listing, you are found disabled at step 3 without needing further analysis. If not, the evaluation continues.</li>
+    <li><strong>Can you perform your past relevant work?</strong> SSA assesses your residual functional capacity (RFC) &mdash; what you can still do despite your impairment &mdash; and determines whether your RFC allows you to perform any job you held in the past 15 years. If yes, the claim is denied. If no, the evaluation continues.</li>
+    <li><strong>Can you perform any work that exists in the national economy?</strong> Given your RFC, age, education, and work experience, can you perform any jobs available in significant numbers? For younger applicants (under 50), SSA applies strict standards, since the vocational grid rules give limited credit to age. For older workers (particularly 55+), the grid rules are more favorable. If SSA determines no work is available, you are found disabled.</li>
+  </ol>
+
+  <h2>How Your Benefit Amount Is Calculated</h2>
+  <p>Your SSDI monthly benefit is your Primary Insurance Amount (PIA) &mdash; calculated from your Average Indexed Monthly Earnings (AIME) using SSA&rsquo;s bend point formula. The 2025 formula applies three rates:</p>
+  <ul>
+    <li>90% of the first $1,174 of AIME</li>
+    <li>32% of AIME between $1,174 and $7,078</li>
+    <li>15% of AIME above $7,078</li>
+  </ul>
+  <p>The result is rounded to the nearest $0.10. In 2025, the average SSDI benefit is approximately $1,537/month; the maximum for high earners is $3,822/month. Use our <a href="/">calculator</a> to estimate your specific benefit based on your AIME.</p>
+
+  <h2>The Five-Month Waiting Period</h2>
+  <p>Benefits do not begin on your disability onset date. SSA imposes a mandatory five-month waiting period. Your first benefit payment covers the sixth full month after your established onset date. If your onset is January 1, benefits start in July. This waiting period cannot be waived and applies regardless of how long your application took to process.</p>
+
+  <h2>Medicare Coverage</h2>
+  <p>SSDI recipients become eligible for Medicare 24 months after their entitlement date. Entitlement begins at onset plus the five-month waiting period &mdash; not at first payment. For applicants who spent years in the appeals process, this means Medicare eligibility may begin sooner than expected after approval, because SSA calculates from the established onset date, not the approval date. One exception: ALS (amyotrophic lateral sclerosis) beneficiaries become Medicare-eligible immediately upon SSDI entitlement, without the 24-month wait.</p>
+
   <h2>Continuing Disability Reviews</h2>
-  <p>SSA periodically reviews your case to verify you remain disabled. Reviews occur every 3 years for conditions expected to improve, every 7 years for conditions unlikely to improve.</p>
+  <p>Approval does not mean permanent benefits without further review. SSA periodically conducts Continuing Disability Reviews (CDRs) to verify recipients remain disabled. The review frequency depends on the nature of the impairment:</p>
+  <ul>
+    <li><strong>Medical improvement expected:</strong> CDR every 6&ndash;18 months.</li>
+    <li><strong>Medical improvement possible:</strong> CDR every 3 years.</li>
+    <li><strong>Medical improvement not expected:</strong> CDR every 5&ndash;7 years.</li>
+  </ul>
+  <p>CDRs examine current medical records and work activity. If SSA determines your condition has improved to the point where you can engage in SGA, benefits terminate (with appeal rights). Maintaining consistent medical treatment and keeping SSA informed of any change in condition or earnings is important for continuing recipients.</p>
+
+  <p>Ready to estimate your benefit? Use the <a href="/">SSDI calculator</a>, or see the <a href="/guides/ssdi-application-process">application process guide</a> for the next steps.</p>
 </BaseLayout>

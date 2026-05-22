@@ -1,10 +1,22 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'Contact';
-const description = 'Contact the editorial team.';
+const title = 'Contact | ssdicalc.com';
+const description = 'Contact the editorial team at ssdicalc.com with corrections, feedback, or questions about SSDI content.';
 ---
 <BaseLayout title={title} description={description}>
   <h1>Contact</h1>
-  <p>For corrections, feedback, or questions, email <a href="mailto:hey@theclicklab.agency">hey@theclicklab.agency</a>.</p>
-  <p>We read every message but can&rsquo;t provide legal advice or respond to requests for case-specific analysis.</p>
+
+  <p>For corrections, feedback, or questions about content on ssdicalc.com, email us at <a href="mailto:hey@theclicklab.agency">hey@theclicklab.agency</a>. We read every message and aim to respond within five business days.</p>
+
+  <h2>What we can help with</h2>
+  <ul>
+    <li><strong>Factual corrections.</strong> If a page contains an outdated SSA threshold, an incorrect rule, or a calculation error, tell us the page URL and the specific issue. SSDI benefit thresholds and credit values change annually and we want to know when something is stale.</li>
+    <li><strong>Methodology questions.</strong> Questions about how the PIA formula works, what the bend points represent, or how a specific input affects the calculation are welcome. The <a href="/methodology">methodology page</a> covers the full model.</li>
+    <li><strong>Broken links or technical issues.</strong> If a page isn&rsquo;t loading or a link is broken, let us know.</li>
+    <li><strong>Content suggestions.</strong> Suggestions for topics we haven&rsquo;t covered &mdash; specific impairment categories, state supplement questions, concurrent benefit scenarios &mdash; are appreciated.</li>
+  </ul>
+
+  <h2>What we cannot help with</h2>
+  <p>We are not a law firm and cannot provide legal advice or evaluate your individual SSDI claim. For guidance on your specific situation &mdash; whether your condition qualifies, how to handle a denial, or whether to pursue an ALJ hearing &mdash; consult a licensed disability attorney or SSA-accredited representative. Most handle SSDI cases on contingency (no upfront fee, 25% of back pay capped at $7,200 if you win). SSA maintains a directory of accredited representatives at <a href="https://www.ssa.gov" target="_blank" rel="noopener">ssa.gov</a>.</p>
+  <p>We cannot recommend specific attorneys, predict case outcomes, or provide SSA account access assistance.</p>
 </BaseLayout>

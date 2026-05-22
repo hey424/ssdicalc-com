@@ -1,29 +1,67 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const title = 'SSDI FAQ | ssdicalc.com';
-const description = 'Frequently asked questions about Social Security Disability Insurance eligibility, benefits, and the application process.';
+const description = 'Frequently asked questions about SSDI eligibility, benefits, the application process, appeals, and work incentives — answered in plain English.';
 ---
 <BaseLayout title={title} description={description}>
   <h1>SSDI FAQ</h1>
+  <p><em>Reviewed by Faye Underwood (FU), Editor-in-Chief &mdash; Social Security Disability Practice. Updated May 2026.</em></p>
 
   <h2>What is SSDI?</h2>
-  <p>Social Security Disability Insurance (SSDI) is a federal program that pays monthly benefits to workers who become disabled and can no longer work. It is funded through payroll taxes (FICA).</p>
+  <p>Social Security Disability Insurance (SSDI) is a federal insurance program funded through FICA payroll taxes that pays monthly benefits to workers who become disabled and can no longer engage in substantial gainful activity. It is administered by the Social Security Administration (SSA) under Title II of the Social Security Act. Because it is insurance &mdash; not welfare &mdash; eligibility depends on your work and earnings history, not your current income or assets.</p>
 
   <h2>How do I qualify for SSDI?</h2>
-  <p>You must: (1) have a medically determinable physical or mental impairment expected to last 12+ months or result in death; (2) be unable to do substantial gainful activity (SGA); and (3) have sufficient work credits.</p>
+  <p>Two parallel requirements must both be met:</p>
+  <ul>
+    <li><strong>Medical eligibility:</strong> You must have a medically determinable physical or mental impairment that is expected to last at least 12 continuous months or result in death, and that impairment must prevent you from engaging in substantial gainful activity (SGA &mdash; defined as earning above $1,620/month in 2025, or $2,700/month for individuals who are blind).</li>
+    <li><strong>Insured status:</strong> You must have earned sufficient Social Security work credits. For most applicants age 31 or older, this means 40 total credits with at least 20 earned in the 10 years before disability onset. Younger workers can qualify with fewer credits on a sliding scale.</li>
+  </ul>
+  <p>SSA uses a five-step sequential evaluation to determine medical eligibility. A disability attorney can help you understand how your specific condition and work history are evaluated under this framework.</p>
 
-  <h2>What are work credits?</h2>
-  <p>Work credits are earned based on your annual wages or self-employment income. In 2025, you earn one credit for each $1,730 earned, up to 4 credits per year. Most people need 40 credits (10 years of work), with 20 earned in the last 10 years. Younger workers may qualify with fewer credits.</p>
+  <h2>What are work credits and how do I earn them?</h2>
+  <p>Work credits are the unit SSA uses to measure your covered employment history. In 2025, you earn one credit for every $1,730 in wages or self-employment income, up to a maximum of four credits per year. The credit threshold is adjusted annually for wage growth.</p>
+  <p>Most workers age 31 or older need 40 total credits, with 20 earned in the 10 years immediately before their disability onset date. This is called the &ldquo;20/40&rdquo; rule. The recency requirement exists because SSDI is intended to protect active workers &mdash; not people who worked many years ago and have since left the workforce.</p>
+  <p>Gaps in your work history matter. If you spent years out of the workforce &mdash; caregiving, health issues before the current disability, self-employment without proper tax reporting &mdash; you may have fewer recent credits than you expect. Checking your earnings record at ssa.gov before applying reveals any gaps.</p>
 
   <h2>How long does the SSDI application take?</h2>
-  <p>Initial decisions take 3–6 months. Most initial applications are denied (about 67%). Reconsideration takes 3–5 months. Hearings before an ALJ take 12–24 months. The full process can take 2–3 years.</p>
+  <p>The timeline depends on what level of review your case requires:</p>
+  <ul>
+    <li><strong>Initial application:</strong> 3&ndash;6 months. Roughly 33% of initial applications are approved. Most are denied at this stage.</li>
+    <li><strong>Reconsideration:</strong> An additional 3&ndash;5 months. Approval rates at reconsideration are low &mdash; approximately 10&ndash;15%. Most applicants who will ultimately succeed do so at the hearing level.</li>
+    <li><strong>ALJ hearing:</strong> After requesting a hearing, scheduling typically takes 12&ndash;24 months depending on your region. ALJ approval rates run approximately 45&ndash;55%. This is where most successful claims are decided.</li>
+    <li><strong>Appeals Council and federal court:</strong> Additional years if needed. These stages are used when the ALJ decision itself contains a legal error.</li>
+  </ul>
+  <p>From initial application to ALJ hearing decision, two to three years is common. Applying early &mdash; as soon as you become disabled &mdash; is critical, because benefits are only retroactive to 12 months before your application date.</p>
 
   <h2>What is the 5-month waiting period?</h2>
-  <p>SSDI benefits begin 5 months after your disability onset date. You will not receive benefits for the first 5 months of disability. Medicare coverage begins 24 months after your SSDI entitlement date.</p>
+  <p>SSA imposes a mandatory five-month waiting period before SSDI benefits begin. Benefits start in the sixth full month after your established disability onset date, not your application date. This means if SSA determines your disability began on January 1, your first payment covers the month of July &mdash; and you receive no benefit for January through June regardless of when you applied.</p>
+  <p>The waiting period was created as a cost-control measure when SSDI was expanded in the 1970s. It has practical implications for financial planning &mdash; particularly for workers without savings or employer-provided short-term disability coverage to bridge the gap.</p>
+
+  <h2>When does Medicare coverage start?</h2>
+  <p>Medicare begins 24 months after your SSDI entitlement date. Entitlement starts at your disability onset date plus the five-month waiting period &mdash; not when your first check arrives. So if your disability onset was January 1 and your entitlement began July 1, Medicare starts July 1 of two years later. People who went through a lengthy appeals process may become Medicare-eligible sooner than they expect, because SSA uses the established onset date, not the approval date, for the 24-month clock.</p>
 
   <h2>Can I work while receiving SSDI?</h2>
-  <p>You can work during a Trial Work Period (TWP) of 9 months without losing benefits. After the TWP, earning above the SGA limit ($1,620/month in 2025, $2,700 for blind individuals) generally ends benefits.</p>
+  <p>Yes, within limits. SSA has several work incentive programs designed to allow SSDI recipients to test their ability to return to employment without immediately losing benefits:</p>
+  <ul>
+    <li><strong>Trial Work Period (TWP):</strong> You can work for up to 9 months (not necessarily consecutive) within a 60-month rolling window without affecting your SSDI payments, regardless of how much you earn. In 2025, a month counts as a TWP month if you earn more than $1,110.</li>
+    <li><strong>Extended Period of Eligibility (EPE):</strong> After the TWP, you enter a 36-month EPE. During the EPE, you receive benefits for any month you earn below the SGA level. If earnings exceed SGA, benefits stop for that month but can restart without a new application if you drop below SGA again.</li>
+    <li><strong>Expedited Reinstatement:</strong> If your benefits terminated because of work and you become unable to work again within 5 years, you can request reinstatement without filing a new application.</li>
+  </ul>
 
   <h2>What is the difference between SSDI and SSI?</h2>
-  <p>SSDI is based on work history and is available to disabled workers who have paid into Social Security. SSI (Supplemental Security Income) is need-based and available to disabled individuals with limited income and resources, regardless of work history.</p>
+  <p>Both programs require a qualifying disability, but they operate on different foundations:</p>
+  <ul>
+    <li><strong>SSDI</strong> is earnings-based. Benefit amounts vary based on your work history. Health coverage is Medicare (after 24 months). No asset limits.</li>
+    <li><strong>SSI</strong> is need-based. Benefits are a flat federal rate ($967/month for individuals in 2025, plus state supplements where available). Health coverage is Medicaid (immediate in most states). Strict income and asset limits apply ($2,000 in countable assets for individuals).</li>
+  </ul>
+  <p>If your SSDI benefit is below the SSI federal benefit rate and you meet the income/asset limits, you may qualify for both programs simultaneously &mdash; called &ldquo;concurrent benefits.&rdquo; SSI fills the gap up to the applicable maximum.</p>
+
+  <h2>Should I hire a disability attorney?</h2>
+  <p>Most successful SSDI applicants who went through the full appeals process were represented by a disability attorney or accredited representative by the time they reached the ALJ hearing stage. Attorneys who specialize in disability claims work on contingency: they receive 25% of back pay, capped at $7,200 (2025 cap), paid only if you win. There is no upfront cost.</p>
+  <p>For straightforward applications involving clear Blue Book listings or Compassionate Allowances conditions, you may succeed without representation. For most cases that reach the ALJ level &mdash; especially those involving mental health conditions, subjective pain, or complex medical histories &mdash; experienced legal representation significantly improves outcomes.</p>
+
+  <h2>What is a Compassionate Allowance?</h2>
+  <p>SSA&rsquo;s Compassionate Allowances program identifies conditions that clearly meet the SSDI disability standard and routes them to expedited processing. More than 200 conditions qualify, including most stage IV cancers, ALS, early-onset Alzheimer&rsquo;s disease, and a growing list of rare diseases. Compassionate Allowances cases are often approved within weeks rather than months. You do not need to do anything special to trigger this process &mdash; SSA identifies qualifying conditions automatically based on your medical documentation.</p>
+
+  <p>More questions? See our <a href="/guides/">guide library</a> or <a href="/contact">contact us</a>.</p>
 </BaseLayout>

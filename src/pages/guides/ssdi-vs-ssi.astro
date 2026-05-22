@@ -1,18 +1,40 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const title = 'SSDI vs. SSI: Key Differences | ssdicalc.com';
-const description = 'Compare SSDI and SSI — eligibility, benefit amounts, health insurance, and how each program works.';
+const description = 'Compare SSDI and SSI — eligibility basis, benefit amounts, health insurance, asset limits, work incentives, and concurrent benefit scenarios.';
 ---
 <BaseLayout title={title} description={description}>
   <h1>SSDI vs. SSI: Key Differences</h1>
+  <p><em>Reviewed by Faye Underwood (FU), Editor-in-Chief &mdash; Social Security Disability Practice. Updated May 2026.</em></p>
+
+  <p>Many people use SSDI and SSI interchangeably, but they are distinct federal programs with different eligibility rules, benefit structures, and health insurance pathways. Understanding the difference matters because someone denied for SSDI may still qualify for SSI, and someone who qualifies for both can receive both simultaneously.</p>
+
   <h2>Basis for Eligibility</h2>
-  <p><strong>SSDI</strong> is based on your work history and Social Security taxes paid. You must have sufficient work credits. <strong>SSI</strong> is need-based — it requires limited income and resources regardless of work history. Both require a qualifying disability.</p>
+  <p><strong>SSDI (Title II)</strong> is an insurance program based on your work and earnings history. You must have paid Social Security taxes on covered earnings and accumulated sufficient work credits. Your benefit amount varies based on your average indexed monthly earnings &mdash; higher earners receive larger benefits. There are no income or asset limits for SSDI eligibility beyond the SGA threshold for current work activity.</p>
+  <p><strong>SSI (Title XVI)</strong> is a needs-based program funded by general tax revenues (not the FICA trust fund). Eligibility requires a qualifying disability but does not depend on work history. Instead, SSI has strict income and resource limits: in 2025, countable resources are capped at $2,000 for individuals and $3,000 for couples. Benefit amounts are uniform at the federal benefit rate ($967/month for individuals in 2025) plus any applicable state supplement.</p>
+
   <h2>Benefit Amount</h2>
-  <p><strong>SSDI</strong> benefit varies based on your earnings history (average ~$1,537/month in 2025). <strong>SSI</strong> pays a flat federal benefit rate ($967/month for individuals, $1,450 for couples in 2025), with state supplements in some states.</p>
+  <p><strong>SSDI:</strong> Varies based on your earnings history via the PIA formula. The 2025 average is approximately $1,537/month; the maximum is $3,822/month for high earners. Use our <a href="/">calculator</a> to estimate your specific benefit.</p>
+  <p><strong>SSI:</strong> Flat federal benefit rate of $967/month for individuals and $1,450/month for couples in 2025. Many states pay a supplemental payment on top of the federal rate. SSI benefits are reduced dollar-for-dollar for countable income above a small exclusion amount.</p>
+
   <h2>Health Insurance</h2>
-  <p><strong>SSDI</strong> comes with Medicare after a 24-month waiting period. <strong>SSI</strong> recipients are immediately eligible for Medicaid in most states.</p>
-  <h2>Can You Receive Both?</h2>
-  <p>Yes — if your SSDI benefit is low enough, you may qualify for both SSDI and SSI simultaneously (called "concurrent benefits"). SSI fills the gap up to the federal benefit rate.</p>
+  <p><strong>SSDI</strong> comes with Medicare &mdash; but not immediately. Medicare eligibility begins 24 months after your SSDI entitlement date (which is your disability onset date plus the 5-month waiting period). During the two-year waiting period, SSDI recipients have no Medicare and must maintain coverage through other means &mdash; COBRA, marketplace plans, or Medicaid if income is low enough.</p>
+  <p><strong>SSI</strong> recipients are eligible for Medicaid immediately in most states upon SSI approval. Medicaid provides more comprehensive coverage than Medicare for many recipients (no premiums, dental and vision in many states) but with a narrower provider network than Medicare in some regions.</p>
+
+  <h2>Asset and Income Limits</h2>
+  <p><strong>SSDI:</strong> No asset limit. Income limits apply only to earned wages &mdash; you cannot earn above SGA ($1,620/month in 2025) while receiving SSDI without triggering the trial work period rules. Unearned income (investments, rental income, gifts) does not affect SSDI.</p>
+  <p><strong>SSI:</strong> Strict countable resource limit of $2,000 for individuals ($3,000 for couples). Countable resources include bank accounts, investments, and most personal property above a certain value. Excluded resources include one home, one vehicle, household goods, and life insurance with limited face value. Planning for SSI eligibility often involves spending down excess resources before or during the application process.</p>
+
   <h2>Work Incentives</h2>
-  <p><strong>SSDI</strong> has a Trial Work Period and Extended Period of Eligibility. <strong>SSI</strong> has a different work incentive structure — $1 of SSI is reduced for every $2 of earned income above $85/month.</p>
+  <p><strong>SSDI</strong> allows a Trial Work Period of up to 9 months of unlimited earnings, followed by an Extended Period of Eligibility during which benefits are paid in months where earnings fall below SGA. Returning to work under SSDI is structured to allow testing work capacity without immediate benefit termination.</p>
+  <p><strong>SSI</strong> uses a different formula: the first $65 of earned income per month is excluded, and then SSI is reduced by $1 for every $2 earned above that exclusion (and the first $20 of unearned income is also excluded). This means SSI benefits phase out gradually with increasing earnings rather than switching off at a threshold.</p>
+
+  <h2>Concurrent Benefits</h2>
+  <p>Some people qualify for both SSDI and SSI simultaneously &mdash; called &ldquo;concurrent&rdquo; benefits. This happens when SSDI benefits are low enough (due to limited earnings history) that the SSDI amount falls below the SSI federal benefit rate. SSI then fills the gap up to the applicable maximum. To receive concurrent benefits, you must meet SSI&rsquo;s income and asset rules in addition to SSDI eligibility. If your SSDI benefit exceeds the SSI rate, SSI typically does not pay.</p>
+
+  <h2>Which Program Should You Apply For?</h2>
+  <p>If you have substantial work history and meet the credit requirements, SSDI is usually the primary option because benefit amounts are typically higher and there are no asset limits. If you have limited work history, no work history, or have been out of the workforce long enough that your SSDI insured status has lapsed (generally five years after last substantial employment), SSI may be your only option.</p>
+  <p>SSA evaluates both programs when you apply. You do not need to apply for them separately &mdash; a single application initiates review for both programs simultaneously. A disability attorney can help you understand which programs you may qualify for and how to build the strongest possible case for each.</p>
+
+  <p>See the <a href="/guides/how-ssdi-benefits-work">full SSDI eligibility guide</a> or return to the <a href="/">benefit calculator</a>.</p>
 </BaseLayout>

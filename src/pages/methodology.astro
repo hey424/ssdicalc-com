@@ -1,29 +1,53 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const title = 'Calculator Methodology | ssdicalc.com';
-const description = 'How the SSDI benefit calculator estimates your monthly benefit using SSA PIA bend points.';
+const description = 'How the SSDI benefit calculator estimates your monthly benefit using SSA PIA bend points, AIME inputs, and work credit rules.';
 ---
 <BaseLayout title={title} description={description}>
   <h1>Calculator Methodology</h1>
+  <p><em>Reviewed by Faye Underwood (FU), Editor-in-Chief &mdash; Social Security Disability Practice. Updated May 2026.</em></p>
 
-  <h2>Primary Insurance Amount (PIA) Formula</h2>
-  <p>We use SSA's official 2025 PIA bend point formula to estimate monthly benefits:</p>
+  <p>This page explains every step of the SSDI benefit estimate: what inputs the calculator uses, how SSA&rsquo;s PIA formula works, what the work credit check does, and where the estimate diverges from SSA&rsquo;s official calculation. Transparency about the methodology is essential &mdash; anyone using this tool to plan a disability filing, evaluate back pay, or think through Medicare timing should understand exactly what the numbers represent.</p>
+
+  <h2>Step 1: The AIME Input</h2>
+  <p>AIME stands for Average Indexed Monthly Earnings. It is the single most important variable in the SSDI benefit formula. SSA computes your AIME by:</p>
+  <ol>
+    <li>Taking your actual annual earnings for each year in your covered earnings record</li>
+    <li>Indexing each year&rsquo;s earnings to account for wage growth (using the national average wage index for the year two years before eligibility)</li>
+    <li>Selecting your highest-earning 35 years (or fewer if you haven&rsquo;t worked 35 years)</li>
+    <li>Summing those indexed earnings and dividing by the total months in those years (up to 420)</li>
+  </ol>
+  <p>Our calculator accepts a self-estimated AIME. The most accurate source for your AIME is your Social Security Statement, available at <a href="https://www.ssa.gov/myaccount" target="_blank" rel="noopener">ssa.gov/myaccount</a>. If you don&rsquo;t have that, a rough estimate is your total career earnings divided by total months worked &mdash; this will overstate your AIME somewhat because SSA uses indexed (inflation-adjusted) earnings, but it gives a useful order-of-magnitude figure.</p>
+
+  <h2>Step 2: The PIA Bend Point Formula</h2>
+  <p>SSA applies a three-tier formula to your AIME, with each tier calculated at a different percentage. The dollar thresholds that separate the tiers are called <strong>bend points</strong> and are adjusted annually for wage growth.</p>
+  <p><strong>2025 bend points:</strong></p>
   <ul>
     <li>90% of the first $1,174 of AIME</li>
     <li>32% of AIME between $1,174 and $7,078</li>
     <li>15% of AIME above $7,078</li>
   </ul>
-  <p>The result is rounded to the nearest $0.10, consistent with SSA's rounding rules.</p>
+  <p>The results from each tier are summed, then rounded to the nearest $0.10 (consistent with SSA&rsquo;s rounding rules). This total is your Primary Insurance Amount &mdash; your baseline monthly SSDI benefit.</p>
+  <p>The formula is progressive by design. A worker with an AIME of $1,000 replaces approximately 90% of their average monthly earnings. A worker with an AIME of $7,000 replaces roughly 47%. This structure provides proportionally stronger protection to lower-wage workers who have less capacity to self-insure through savings.</p>
+  <p>Bend points are updated annually. This calculator uses 2025 figures. Check <a href="https://www.ssa.gov/oact/cola/piaformula.html" target="_blank" rel="noopener">ssa.gov/oact/cola/piaformula.html</a> for current-year values if you are estimating for a future year.</p>
 
-  <h2>AIME Input</h2>
-  <p>AIME (Average Indexed Monthly Earnings) is the key input. SSA computes this from your official earnings record using wage indexing. Our calculator accepts your self-estimated AIME — we recommend checking your Social Security Statement at ssa.gov/myaccount for accuracy.</p>
+  <h2>Step 3: Work Credits Check</h2>
+  <p>Before a PIA calculation is meaningful, the claimant must have sufficient work credits to be insured for SSDI. The calculator handles three scenarios:</p>
+  <ul>
+    <li><strong>Sufficient credits (40+ total, 20 in last 10 years):</strong> Standard eligibility for workers age 31 and older. The PIA calculation proceeds normally.</li>
+    <li><strong>Young worker exception:</strong> Workers under age 31 can qualify with fewer credits. The exact minimum varies by age at onset. The calculator applies this exception without penalizing the PIA estimate, since the PIA formula itself is the same regardless of age.</li>
+    <li><strong>Insufficient credits:</strong> The calculator flags likely ineligibility and recommends filing anyway (SSA makes the final determination) and considering SSI as an alternative program.</li>
+  </ul>
+  <p>Credits are earned based on annual wages: in 2025, one credit per $1,730 earned, up to 4 credits per year. A gap in covered employment &mdash; years spent caring for family, working abroad, or doing cash work without proper tax reporting &mdash; can reduce your credit total even if you have substantial earnings history.</p>
 
-  <h2>Work Credits Check</h2>
-  <p>If you indicate insufficient credits, we flag likely ineligibility. SSA makes the final determination — we recommend filing regardless if you believe you have a qualifying disability.</p>
-
-  <h2>Bend Points Update</h2>
-  <p>SSA adjusts bend points annually. Our formula uses 2025 bend points. Check <a href="https://www.ssa.gov/oact/cola/piaformula.html" target="_blank" rel="noopener">ssa.gov</a> for the most current figures.</p>
-
-  <h2>Limitations</h2>
-  <p>This calculator does not account for: family maximum benefits, offsets for workers' compensation or other disability benefits, delayed retirement credits, or adjustments for age-based reductions. SSA's official calculation may differ from this estimate.</p>
+  <h2>Known Limitations</h2>
+  <p>The calculator produces a useful estimate but does not replicate SSA&rsquo;s full administrative calculation. Factors not modeled:</p>
+  <ul>
+    <li><strong>Family maximum benefits.</strong> SSA applies a separate formula capping total benefits payable to all family members on one earnings record. Your individual PIA may exceed what SSA actually pays when dependents are entitled on your record.</li>
+    <li><strong>Workers&rsquo; compensation and public disability offsets.</strong> If you receive workers&rsquo; comp, state disability, or other public benefits, SSA reduces your SSDI so the combined amount doesn&rsquo;t exceed 80% of your pre-disability average current earnings (ACE).</li>
+    <li><strong>Government pension offset.</strong> If you receive a pension from employment not covered by Social Security (certain state and local government jobs), your SSDI benefit may be reduced.</li>
+    <li><strong>Delayed retirement or early reduction.</strong> SSDI converts to retirement benefits at full retirement age; the formula used here is specific to disability benefit calculations.</li>
+    <li><strong>Indexing accuracy.</strong> The calculator accepts a self-reported AIME. Users who don&rsquo;t have access to their actual SSA earnings record should treat the result as an approximation.</li>
+  </ul>
+  <p>Questions about the methodology? <a href="/contact">Contact us</a>.</p>
 </BaseLayout>
